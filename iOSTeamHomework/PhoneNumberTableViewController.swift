@@ -17,7 +17,7 @@ class PhoneNumberTableViewController: UITableViewController {
 
 
     @IBAction func addPhoneNumber() {
-        let d = PhoneNumberManager.NumberData(code: Int(arc4random() % 9 + 1), number: Int(arc4random() % 90000000 + 10000000))
+        let d = NumberData(code: Int(arc4random() % 9 + 1), number: Int(arc4random() % 90000000 + 10000000))
         PhoneNumberManager.sharedInstance.add(d)
     }
     
@@ -63,12 +63,12 @@ class PhoneNumberTableViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let code = PhoneNumberManager.sharedInstance.getCodes()[indexPath.section]
             let data = PhoneNumberManager.sharedInstance.getNumbers(for: code)[indexPath.row]

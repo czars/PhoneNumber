@@ -9,10 +9,6 @@
 import Foundation
 
 class PhoneNumberManager {
-    struct NumberData {
-        var code: Int
-        var number: Int
-    }
     
     static let sharedInstance = PhoneNumberManager()
     static let dataChangedNotification: Notification.Name = Notification.Name("PhoneNumberManager.dataChangedNotification")
@@ -28,7 +24,7 @@ class PhoneNumberManager {
     }
     
     func remove(_ number: NumberData) {
-        let index = numbers.index { (data) -> Bool in
+        let index = numbers.firstIndex { (data) -> Bool in
             return data.code == number.code && data.number == number.number
         }
         

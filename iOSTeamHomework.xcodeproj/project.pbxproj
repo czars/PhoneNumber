@@ -15,6 +15,12 @@
 		AB54AC321F6D65B20000EF31 /* iOSTeamHomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC311F6D65B20000EF31 /* iOSTeamHomeworkUITests.swift */; };
 		AB54AC401F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */; };
 		AB54AC441F6D76BC0000EF31 /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
+		D76ACDE8228B14DA00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
+		D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
+		D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
+		D7BC4E992289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
+		D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
+		D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,8 @@
 		AB54AC331F6D65B20000EF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewController.swift; sourceTree = "<group>"; };
 		AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberManager.swift; sourceTree = "<group>"; };
+		D76ACDE7228B14DA00EA0FAF /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,11 @@
 		AB54AC101F6D65B20000EF31 /* iOSTeamHomework */ = {
 			isa = PBXGroup;
 			children = (
+				D76ACDE6228B14B400EA0FAF /* Model */,
 				AB54AC111F6D65B20000EF31 /* AppDelegate.swift */,
 				AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */,
 				AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */,
+				D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */,
 				AB54AC151F6D65B20000EF31 /* Main.storyboard */,
 				AB54AC181F6D65B20000EF31 /* Assets.xcassets */,
 				AB54AC1A1F6D65B20000EF31 /* LaunchScreen.storyboard */,
@@ -126,6 +136,14 @@
 				AB54AC331F6D65B20000EF31 /* Info.plist */,
 			);
 			path = iOSTeamHomeworkUITests;
+			sourceTree = "<group>";
+		};
+		D76ACDE6228B14B400EA0FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76ACDE7228B14DA00EA0FAF /* NumberData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,20 +209,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = gogolook;
 				TargetAttributes = {
 					AB54AC0D1F6D65B20000EF31 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					AB54AC211F6D65B20000EF31 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = AB54AC0D1F6D65B20000EF31;
 					};
 					AB54AC2C1F6D65B20000EF31 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = AB54AC0D1F6D65B20000EF31;
 					};
@@ -263,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB54AC441F6D76BC0000EF31 /* PhoneNumberManager.swift in Sources */,
+				D76ACDE8228B14DA00EA0FAF /* NumberData.swift in Sources */,
 				AB54AC121F6D65B20000EF31 /* AppDelegate.swift in Sources */,
+				D7BC4E992289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
 				AB54AC401F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
 				AB54AC271F6D65B20000EF31 /* iOSTeamHomeworkTests.swift in Sources */,
+				D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
 				AB54AC321F6D65B20000EF31 /* iOSTeamHomeworkUITests.swift in Sources */,
+				D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +360,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +368,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -390,6 +419,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -397,6 +427,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -436,7 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -451,7 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -467,7 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomeworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTeamHomework.app/iOSTeamHomework";
 			};
@@ -484,7 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomeworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTeamHomework.app/iOSTeamHomework";
 			};
@@ -500,7 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomeworkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOSTeamHomework;
 			};
@@ -516,7 +547,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomeworkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOSTeamHomework;
 			};

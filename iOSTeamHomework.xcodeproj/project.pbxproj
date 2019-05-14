@@ -18,6 +18,8 @@
 		D76ACDE8228B14DA00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
 		D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
 		D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
+		D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
+		D76ACDEC228B32B400EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
 		D7BC4E992289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
@@ -296,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
+				D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */,
 				AB54AC271F6D65B20000EF31 /* iOSTeamHomeworkTests.swift in Sources */,
 				D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */,
 			);
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
+				D76ACDEC228B32B400EA0FAF /* PhoneNumberManager.swift in Sources */,
 				AB54AC321F6D65B20000EF31 /* iOSTeamHomeworkUITests.swift in Sources */,
 				D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */,
 			);
@@ -396,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -449,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -462,8 +466,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 493YTA9B3T;
 				INFOPLIST_FILE = iOSTeamHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,8 +482,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 493YTA9B3T;
 				INFOPLIST_FILE = iOSTeamHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";

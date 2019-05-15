@@ -16,7 +16,6 @@ class CreatePhoneNumberViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "zone"
         textField.borderStyle = .roundedRect
-        textField.tag = 0
         return textField
     }()
 
@@ -25,7 +24,6 @@ class CreatePhoneNumberViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "number"
         textField.borderStyle = .roundedRect
-        textField.tag = 1
         return textField
     }()
 
@@ -82,6 +80,10 @@ class CreatePhoneNumberViewController: UIViewController {
         setupCloseButtonConstraints()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        zoneCode.becomeFirstResponder()
+    }
+
     func setupEditComponentsConstraints() {
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-160-[zone]-10-[warning]-20-[save]", options: [.alignAllLeading], metrics: nil, views: ["zone": zoneCode, "warning": warning, "save": saveButton]))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-70-[zone(80)]-10-[number]-64-|", options: [.alignAllCenterY], metrics: nil, views: ["zone": zoneCode, "number": number]))
@@ -102,6 +104,8 @@ class CreatePhoneNumberViewController: UIViewController {
     }
 
     @objc func dismissView() {
+        zoneCode.resignFirstResponder()
+        number.resignFirstResponder()
         dismiss(animated: true) {
             print("dismissed \(String(describing: CreatePhoneNumberViewController.self))")
         }
@@ -110,15 +114,28 @@ class CreatePhoneNumberViewController: UIViewController {
 
 extension CreatePhoneNumberViewController: UITextFieldDelegate {
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == zoneCode {
+            zoneCode.resignFirstResponder()
+            number.becomeFirstResponder()
+        } else {
+            number.resignFirstResponder()
+            addNewNumberAction(nil)
+        }
+        return true
+    }
 }
 
 extension CreatePhoneNumberViewController {
-    @objc func addNewNumberAction(_ sender:UIButton) {
+    @objc func addNewNumberAction(_ sender:UIButton?) {
         //check duplicated by phonenumber manager
         //then add new number
         let d = NumberData(code: Int(arc4random() % 9 + 1), number: Int(arc4random() % 90000000 + 10000000))
         PhoneNumberManager.sharedInstance.add(d)
         warning.isHidden = false
         warning.text = "created new number"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.dismissView()
+        }
     }
 }

@@ -53,6 +53,7 @@ class CreatePhoneNumberViewController: UIViewController {
         warning.translatesAutoresizingMaskIntoConstraints = false
         warning.textColor = .red
         warning.isHidden = true
+        warning.numberOfLines = 0
         return warning
     }()
 
@@ -89,9 +90,9 @@ class CreatePhoneNumberViewController: UIViewController {
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-70-[zone(80)]-10-[number]-64-|", options: [.alignAllCenterY], metrics: nil, views: ["zone": zoneCode, "number": number]))
         zoneCode.heightAnchor.constraint(equalToConstant: 44).isActive = true
         number.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        warning.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        warning.heightAnchor.constraint(equalToConstant: 40).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        warning.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64).isActive = true
+        warning.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64).isActive = true
     }
 
@@ -113,11 +114,6 @@ class CreatePhoneNumberViewController: UIViewController {
 }
 
 extension CreatePhoneNumberViewController: UITextFieldDelegate {
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        warning.text = ""
-        warning.isHidden = true
-    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == zoneCode {
@@ -152,6 +148,12 @@ extension CreatePhoneNumberViewController {
             zoneCode.becomeFirstResponder()
             return
         }
+
+        if zoneCode.isFirstResponder {
+            number.becomeFirstResponder()
+            return
+        }
+
         if !validateNumber() {
             warning.text = "number is not a valid number"
             warning.isHidden = false
@@ -161,9 +163,16 @@ extension CreatePhoneNumberViewController {
 
         guard let code = zoneCode.text, let number = number.text, let intCode = Int.init(code), let intNumber = Int.init(number) else { return }
         let d = NumberData(code: intCode, number: intNumber)
+        if PhoneNumberManager.sharedInstance.checkExist(d) {
+            warning.isHidden = false
+            warning.text = "number existed, please enter another one"
+            zoneCode.becomeFirstResponder()
+            return
+        }
         PhoneNumberManager.sharedInstance.add(d)
         warning.isHidden = false
         warning.text = "created new number"
+        warning.textColor = .green
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.dismissView()
         }

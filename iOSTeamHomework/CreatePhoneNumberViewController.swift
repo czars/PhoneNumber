@@ -114,6 +114,11 @@ class CreatePhoneNumberViewController: UIViewController {
 
 extension CreatePhoneNumberViewController: UITextFieldDelegate {
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        warning.text = ""
+        warning.isHidden = true
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == zoneCode {
             zoneCode.resignFirstResponder()
@@ -127,10 +132,35 @@ extension CreatePhoneNumberViewController: UITextFieldDelegate {
 }
 
 extension CreatePhoneNumberViewController {
+
+    func validateCode() -> Bool {
+        guard let codeText = zoneCode.text, let _ = Int.init(codeText) else { return false }
+        return true
+    }
+
+    func validateNumber() -> Bool {
+        guard let numberText = number.text, let _ = Int.init(numberText) else { return false }
+        return true
+    }
+
     @objc func addNewNumberAction(_ sender:UIButton?) {
         //check duplicated by phonenumber manager
         //then add new number
-        let d = NumberData(code: Int(arc4random() % 9 + 1), number: Int(arc4random() % 90000000 + 10000000))
+        if !validateCode() {
+            warning.text = "code is not a valid number"
+            warning.isHidden = false
+            zoneCode.becomeFirstResponder()
+            return
+        }
+        if !validateNumber() {
+            warning.text = "number is not a valid number"
+            warning.isHidden = false
+            number.becomeFirstResponder()
+            return
+        }
+
+        guard let code = zoneCode.text, let number = number.text, let intCode = Int.init(code), let intNumber = Int.init(number) else { return }
+        let d = NumberData(code: intCode, number: intNumber)
         PhoneNumberManager.sharedInstance.add(d)
         warning.isHidden = false
         warning.text = "created new number"

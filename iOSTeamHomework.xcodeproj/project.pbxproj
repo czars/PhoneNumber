@@ -20,6 +20,7 @@
 		D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
 		D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
 		D76ACDEC228B32B400EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
+		D76ACDEE228BB51C00EA0FAF /* PhoneNumberManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */; };
 		D7BC4E992289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
@@ -58,6 +59,7 @@
 		AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewController.swift; sourceTree = "<group>"; };
 		AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberManager.swift; sourceTree = "<group>"; };
 		D76ACDE7228B14DA00EA0FAF /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberManagerTest.swift; sourceTree = "<group>"; };
 		D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 		AB54AC251F6D65B20000EF31 /* iOSTeamHomeworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */,
 				AB54AC261F6D65B20000EF31 /* iOSTeamHomeworkTests.swift */,
 				AB54AC281F6D65B20000EF31 /* Info.plist */,
 			);
@@ -301,6 +304,7 @@
 				D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */,
 				AB54AC271F6D65B20000EF31 /* iOSTeamHomeworkTests.swift in Sources */,
 				D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */,
+				D76ACDEE228BB51C00EA0FAF /* PhoneNumberManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

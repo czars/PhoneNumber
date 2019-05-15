@@ -53,6 +53,19 @@ class PhoneNumberManager {
             return data.code == code
         })
     }
+
+    func checkExist(_ number: NumberData?) -> Bool {
+        var exist = false
+
+        for currentNumber in numbers {
+            if currentNumber == number {
+                exist = true
+                break
+            }
+        }
+
+        return exist
+    }
     
     func load() {
         do {

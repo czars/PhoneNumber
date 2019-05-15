@@ -115,6 +115,16 @@ class CreatePhoneNumberViewController: UIViewController {
 
 extension CreatePhoneNumberViewController: UITextFieldDelegate {
 
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == zoneCode {
+            textField.returnKeyType = .next
+        }
+        if textField == number {
+            textField.returnKeyType = .done
+        }
+        return true
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == zoneCode {
             zoneCode.resignFirstResponder()

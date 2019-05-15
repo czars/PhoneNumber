@@ -55,44 +55,39 @@ class PhoneNumberManager {
     }
 
     func checkExist(_ number: NumberData?) -> Bool {
-        var exist = false
-
-        for currentNumber in numbers {
-            if currentNumber == number {
-                exist = true
-                break
-            }
-        }
-
-        return exist
+        guard let _number = number else { return false }
+        return numbers.contains(_number)
     }
-    
+
+}
+
+extension PhoneNumberManager {
     func load() {
         do {
             let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
             let targetURL = tempDirectoryURL.appendingPathComponent("numbers.dat")
-            
+
             let data = try Data(contentsOf: targetURL)
             if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [[String: Int]] {
                 numbers = json.map({ (item) -> NumberData in
                     return NumberData(code: item["code"]!, number: item["number"]!)
                 })
             }
-            
+
         } catch let error {
             print("\(error)")
         }
     }
-    
+
     func save() {
         let json = numbers.map { (data) -> [String: Int] in
             return ["code": data.code,
                     "number": data.number]
         }
-        
+
         do {
             let data = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions(rawValue: 0))
-            
+
             let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
             let targetURL = tempDirectoryURL.appendingPathComponent("numbers.dat")
             try data.write(to: targetURL)

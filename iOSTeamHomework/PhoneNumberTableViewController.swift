@@ -26,11 +26,21 @@ class PhoneNumberTableViewController: UITableViewController {
     }
     
     @IBAction func savePhoneNumbers() {
-        PhoneNumberManager.sharedInstance.save()
+        PhoneNumberManager.sharedInstance.save { (success) in
+            let alertMessage = success ? "save number successed" : "save number failed"
+            let alertTite = success ? "Success" : "Failed"
+
+            let alert = UIAlertController.init(title: alertTite, message: alertMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: {
+                print("alert success")
+            })
+        }
     }
     
     @objc func dataChanged() {
         tableView.reloadData()
+
     }
 
 }

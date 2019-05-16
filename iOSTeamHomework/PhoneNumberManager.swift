@@ -6,7 +6,7 @@
 //  Copyright © 2017年 gogolook. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PhoneNumberManager {
     
@@ -62,7 +62,7 @@ class PhoneNumberManager {
 }
 
 extension PhoneNumberManager {
-    func load() {
+    func load(_ completeBlock:((Bool)->Void)) {
         do {
             let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
             let targetURL = tempDirectoryURL.appendingPathComponent("numbers.dat")
@@ -72,14 +72,16 @@ extension PhoneNumberManager {
                 numbers = json.map({ (item) -> NumberData in
                     return NumberData(code: item["code"]!, number: item["number"]!)
                 })
+                completeBlock(true)
             }
 
         } catch let error {
             print("\(error)")
+            completeBlock(false)
         }
     }
 
-    func save() {
+    func save(_ completeBlock:((Bool)->Void)) {
         let json = numbers.map { (data) -> [String: Int] in
             return ["code": data.code,
                     "number": data.number]
@@ -91,8 +93,10 @@ extension PhoneNumberManager {
             let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
             let targetURL = tempDirectoryURL.appendingPathComponent("numbers.dat")
             try data.write(to: targetURL)
+            completeBlock(true)
         } catch let error {
             print("\(error)")
+            completeBlock(false)
         }
     }
 }

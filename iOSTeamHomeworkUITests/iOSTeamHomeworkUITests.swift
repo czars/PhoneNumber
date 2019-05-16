@@ -44,8 +44,11 @@ class iOSTeamHomeworkUITests: XCTestCase {
         
     }
 
-    func testCreateNumberAction() {
-        
+
+    func testSaveNumberAction() {
+        let app = XCUIApplication()
+        app.navigationBars["Phone Numbers"]/*@START_MENU_TOKEN@*/.buttons["saveNumber"]/*[[".buttons[\"Save\"]",".buttons[\"saveNumber\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssert(app.alerts.element.staticTexts["save number successed"].exists)
     }
     
 }

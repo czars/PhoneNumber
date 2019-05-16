@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VLT-Z4-wIy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VLT-Z4-wIy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,11 +51,17 @@
                     <navigationItem key="navigationItem" title="Phone Numbers" id="uXQ-X0-V09">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="GiC-H1-zAV">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="addNumber"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addPhoneNumber" destination="qLa-lx-OM3" id="HSR-q8-9GX"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="save" id="kxH-d5-Fe7">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="saveNumber"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePhoneNumbers" destination="qLa-lx-OM3" id="P5b-D0-lpQ"/>
                                 </connections>

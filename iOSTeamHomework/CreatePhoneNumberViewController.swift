@@ -36,6 +36,7 @@ class CreatePhoneNumberViewController: UIViewController {
         button.layer.cornerRadius = 6
         button.layer.borderColor = UIColor.green.cgColor
         button.addTarget(self, action: #selector(self.addNewNumberAction(_:)), for: .touchUpInside)
+        button.accessibilityIdentifier = "createNumber"
         return button
     }()
 
@@ -45,6 +46,7 @@ class CreatePhoneNumberViewController: UIViewController {
         button.setTitle("close", for: .normal)
         button.setTitleColor(.darkGray, for: .normal)
         button.addTarget(self, action: #selector(self.dismissView), for: .touchUpInside)
+        button.accessibilityIdentifier = "closePage"
         return button
     }()
 
@@ -54,6 +56,7 @@ class CreatePhoneNumberViewController: UIViewController {
         warning.textColor = .red
         warning.isHidden = true
         warning.numberOfLines = 0
+        warning.accessibilityIdentifier = "warningLabel"
         return warning
     }()
 

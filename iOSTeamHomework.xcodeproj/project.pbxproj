@@ -112,11 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				D76ACDE6228B14B400EA0FAF /* Model */,
-				AB54AC111F6D65B20000EF31 /* AppDelegate.swift */,
-				AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */,
-				AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */,
-				D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */,
+				D76ACDEF228E841900EA0FAF /* ViewControllers */,
+				D76ACDF0228E842D00EA0FAF /* Manager */,
 				AB54AC151F6D65B20000EF31 /* Main.storyboard */,
+				AB54AC111F6D65B20000EF31 /* AppDelegate.swift */,
 				AB54AC181F6D65B20000EF31 /* Assets.xcassets */,
 				AB54AC1A1F6D65B20000EF31 /* LaunchScreen.storyboard */,
 				AB54AC1D1F6D65B20000EF31 /* Info.plist */,
@@ -149,6 +148,23 @@
 				D76ACDE7228B14DA00EA0FAF /* NumberData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D76ACDEF228E841900EA0FAF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */,
+				D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D76ACDF0228E842D00EA0FAF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

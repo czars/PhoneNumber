@@ -16,6 +16,7 @@ class CreatePhoneNumberViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "zone"
         textField.borderStyle = .roundedRect
+        textField.accessibilityIdentifier = "codeTextField"
         return textField
     }()
 
@@ -24,6 +25,7 @@ class CreatePhoneNumberViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "number"
         textField.borderStyle = .roundedRect
+        textField.accessibilityIdentifier = "numberTextField"
         return textField
     }()
 

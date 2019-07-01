@@ -18,6 +18,9 @@
 		D76ACDE8228B14DA00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
 		D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
 		D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDE7228B14DA00EA0FAF /* NumberData.swift */; };
+		D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
+		D76ACDEC228B32B400EA0FAF /* PhoneNumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */; };
+		D76ACDEE228BB51C00EA0FAF /* PhoneNumberManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */; };
 		D7BC4E992289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
 		D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */; };
@@ -56,6 +59,7 @@
 		AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewController.swift; sourceTree = "<group>"; };
 		AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberManager.swift; sourceTree = "<group>"; };
 		D76ACDE7228B14DA00EA0FAF /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberManagerTest.swift; sourceTree = "<group>"; };
 		D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,11 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				D76ACDE6228B14B400EA0FAF /* Model */,
-				AB54AC111F6D65B20000EF31 /* AppDelegate.swift */,
-				AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */,
-				AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */,
-				D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */,
+				D76ACDEF228E841900EA0FAF /* ViewControllers */,
+				D76ACDF0228E842D00EA0FAF /* Manager */,
 				AB54AC151F6D65B20000EF31 /* Main.storyboard */,
+				AB54AC111F6D65B20000EF31 /* AppDelegate.swift */,
 				AB54AC181F6D65B20000EF31 /* Assets.xcassets */,
 				AB54AC1A1F6D65B20000EF31 /* LaunchScreen.storyboard */,
 				AB54AC1D1F6D65B20000EF31 /* Info.plist */,
@@ -123,6 +126,7 @@
 		AB54AC251F6D65B20000EF31 /* iOSTeamHomeworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				D76ACDED228BB51C00EA0FAF /* PhoneNumberManagerTest.swift */,
 				AB54AC261F6D65B20000EF31 /* iOSTeamHomeworkTests.swift */,
 				AB54AC281F6D65B20000EF31 /* Info.plist */,
 			);
@@ -144,6 +148,23 @@
 				D76ACDE7228B14DA00EA0FAF /* NumberData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D76ACDEF228E841900EA0FAF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB54AC3F1F6D6F3D0000EF31 /* PhoneNumberTableViewController.swift */,
+				D7BC4E982289CC24006618FF /* CreatePhoneNumberViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D76ACDF0228E842D00EA0FAF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB54AC431F6D76BC0000EF31 /* PhoneNumberManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BC4E9A2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
+				D76ACDEB228B32B300EA0FAF /* PhoneNumberManager.swift in Sources */,
 				AB54AC271F6D65B20000EF31 /* iOSTeamHomeworkTests.swift in Sources */,
 				D76ACDE9228B14DC00EA0FAF /* NumberData.swift in Sources */,
+				D76ACDEE228BB51C00EA0FAF /* PhoneNumberManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BC4E9B2289CC24006618FF /* CreatePhoneNumberViewController.swift in Sources */,
+				D76ACDEC228B32B400EA0FAF /* PhoneNumberManager.swift in Sources */,
 				AB54AC321F6D65B20000EF31 /* iOSTeamHomeworkUITests.swift in Sources */,
 				D76ACDEA228B14DD00EA0FAF /* NumberData.swift in Sources */,
 			);
@@ -396,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -449,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -464,6 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTeamHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,6 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTeamHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gogolook.iOSTeamHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";

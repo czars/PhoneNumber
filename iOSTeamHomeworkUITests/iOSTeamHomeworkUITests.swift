@@ -28,9 +28,42 @@ class iOSTeamHomeworkUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testDisplayCreateNumberViewController() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let app = XCUIApplication()
+        app.navigationBars["Phone Numbers"]/*@START_MENU_TOKEN@*/.buttons["addNumber"]/*[[".buttons[\"Add\"]",".buttons[\"addNumber\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+        let createnumberButton = app/*@START_MENU_TOKEN@*/.buttons["createNumber"]/*[[".buttons[\"Add new number\"]",".buttons[\"createNumber\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        createnumberButton.tap()
+        let warningLabel = app.staticTexts["warningLabel"]
+        XCTAssertTrue(createnumberButton.exists)
+        XCTAssertFalse(warningLabel.exists)
+        createnumberButton.tap()
+        XCTAssertTrue(warningLabel.exists)
+        
+    }
+
+
+    func testSaveNumberAction() {
+        let app = XCUIApplication()
+        app.navigationBars["Phone Numbers"]/*@START_MENU_TOKEN@*/.buttons["saveNumber"]/*[[".buttons[\"Save\"]",".buttons[\"saveNumber\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssertTrue(app.alerts.element.staticTexts["save number successed"].exists)
+    }
+
+    func testInputNewNumberAndAddNumber() {
+        let app = XCUIApplication()
+        let createnumberButton = app.buttons["createNumber"]
+        app.navigationBars["Phone Numbers"]/*@START_MENU_TOKEN@*/.buttons["addNumber"]/*[[".buttons[\"Add\"]",".buttons[\"addNumber\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let codeTextfield = app.textFields["codeTextField"]
+        codeTextfield.typeText("1")
+        createnumberButton.tap()
+        let numberTextField = app.textFields["numberTextField"]
+        numberTextField.typeText("111")
+        createnumberButton.tap()
+        let warningLabel = app.staticTexts["warningLabel"]
+        XCTAssertTrue(warningLabel.label == "created new number")
     }
     
 }

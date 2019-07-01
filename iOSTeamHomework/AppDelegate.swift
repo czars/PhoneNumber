@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        PhoneNumberManager.sharedInstance.load()
+        PhoneNumberManager.sharedInstance.load { (success) in
+            if success {
+                print("load success")
+            }
+        }
         
         return true
     }

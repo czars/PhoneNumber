@@ -17,17 +17,35 @@ class PhoneNumberTableViewController: UITableViewController {
 
 
     @IBAction func addPhoneNumber() {
-        let d = NumberData(code: Int(arc4random() % 9 + 1), number: Int(arc4random() % 90000000 + 10000000))
-        PhoneNumberManager.sharedInstance.add(d)
+        // present
+        let newPhoneNumberVC = CreatePhoneNumberViewController.init()
+        present(newPhoneNumberVC, animated: true) {
+            print("")
+        }
+
     }
     
     @IBAction func savePhoneNumbers() {
-        PhoneNumberManager.sharedInstance.save()
+        PhoneNumberManager.sharedInstance.save { (success) in
+            let alertMessage = success ? "save number successed" : "save number failed"
+            let alertTite = success ? "Success" : "Failed"
+
+            let alert = UIAlertController.init(title: alertTite, message: alertMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: {
+                print("alert success")
+            })
+        }
     }
     
     @objc func dataChanged() {
         tableView.reloadData()
+
     }
+
+}
+
+extension PhoneNumberTableViewController {
 
     // MARK: - Table view data source
 
@@ -39,7 +57,7 @@ class PhoneNumberTableViewController: UITableViewController {
         let code = PhoneNumberManager.sharedInstance.getCodes()[section]
         return PhoneNumberManager.sharedInstance.getNumbers(for: code).count
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let code = PhoneNumberManager.sharedInstance.getCodes()[section]
         return "\(code)"
@@ -50,7 +68,7 @@ class PhoneNumberTableViewController: UITableViewController {
 
         let code = PhoneNumberManager.sharedInstance.getCodes()[indexPath.section]
         let data = PhoneNumberManager.sharedInstance.getNumbers(for: code)[indexPath.row]
-        
+
         cell.textLabel?.text = "\(data.number)"
         cell.detailTextLabel?.text = "\(data.code) \(data.number)"
 
@@ -62,7 +80,7 @@ class PhoneNumberTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
+
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }

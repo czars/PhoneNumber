@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NumberData :Codable {
+struct NumberData: Equatable {
     var code: Int
     var number: Int
 }
